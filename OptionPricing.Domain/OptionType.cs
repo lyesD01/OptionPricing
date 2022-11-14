@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace OptionPricing.Domain
 {
-    public class OptionType
+    public enum OptionType
     {
-        public string optionType { get; private set; }
-
-        public OptionType(string optionType)
-        {
-            this.optionType = optionType;
-        }
+        Unkown,
+        Call, 
+        Put
     }
 }

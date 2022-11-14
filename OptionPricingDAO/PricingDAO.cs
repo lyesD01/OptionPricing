@@ -13,7 +13,7 @@ namespace OptionPricingDAO
         int InsertPricing(PricingDTO DTO);
         PricingDTO GetPricing_info(int pricingId);
     }
-    public class PricingDAO
+    public class PricingDAO : IPricingDAO   
     {
         private readonly string _connectionString;
 

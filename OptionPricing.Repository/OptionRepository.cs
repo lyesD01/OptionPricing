@@ -33,7 +33,7 @@ public class OptionRepository : IPricingRepository
         pricingDTO.Maturity = pricing.option.maturity.Value;
         pricingDTO.Premium = pricing.premium.Value;
         pricingDTO.ModelType = pricing.model.ToString();
-        pricingDTO.OptionType = pricing.option.optionType.optionType.ToString();
+        pricingDTO.OptionType = pricing.option.optionType.ToString();
         pricingDTO.UnderlyingType = pricing.option.underlying.underlyingType.ToString();
 
         return _optionDAO.InsertPricing(pricingDTO);
@@ -49,18 +49,19 @@ public class OptionRepository : IPricingRepository
 
         InitialStockPrice initialStockPrice = new InitialStockPrice(pricingDTO.StockPrice);
         ImpliedVolatility implied_volatility = new ImpliedVolatility(pricingDTO.ImpliedVolatility);
+        
         Maturity maturity = new Maturity(pricingDTO.Maturity);
         Strike strike_ = new Strike(pricingDTO.Strike) ;
         PricingDate pricingDate = new PricingDate(pricingDTO.DatePricing);
         RiskFreeRate riskFreeRate = new RiskFreeRate(pricingDTO.RiskFreeRate);
-        
+       
         
         Premium premium = new Premium(pricingDTO.Premium);
         UnderlyingType underlyingType = (UnderlyingType)Enum.Parse(typeof(UnderlyingType), pricingDTO.UnderlyingType);
         PricingModel model = (PricingModel)Enum.Parse(typeof(PricingModel), pricingDTO.ModelType);
         Underlying underlying = new Underlying(initialStockPrice, implied_volatility, riskFreeRate, underlyingType);
 
-        OptionType optionType = new OptionType(pricingDTO.OptionType);
+        OptionType optionType = (OptionType)Enum.Parse(typeof(OptionType), pricingDTO.OptionType);
         Option option = new Option(trader, strike_, maturity, optionType, underlying);
         Pricing pricing = new Pricing(option, model, pricingDate, premium);
 

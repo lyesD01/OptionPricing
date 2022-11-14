@@ -27,7 +27,7 @@ using(var requestSocket = new RequestSocket(">tcp://localhost:5555"))
     PricingModel model = PricingModel.Heston;
     Underlying underlying = new Underlying(initialStockPrice, implied_volatility, riskFreeRate, underlyingType);
 
-    OptionType optionType = new OptionType("Call");
+    OptionType optionType = OptionType.Call;
     Option option = new Option(trader, strike_, maturity, optionType, underlying);
     Pricing pricing = new Pricing(option, model, pricingDate, premium);
 

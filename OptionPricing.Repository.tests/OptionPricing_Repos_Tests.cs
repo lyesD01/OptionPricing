@@ -1,4 +1,5 @@
 using OptionPricing.Domain;
+using OptionPricingDAO;
 
 namespace OptionPricing.Repository.tests
 {
@@ -8,20 +9,23 @@ namespace OptionPricing.Repository.tests
         public void Setup()
         {
         }
-        private readonly IPricingRepository _pricingRepository;
+       
 
         [Test]
         public void OptionPricing_Repos_Tests()
         {
             // Arrange : 
             // Act     : 
-            var pricing = _pricingRepository.GetPricingById(1);
-            Console.WriteLine("Object retrieved succesfully...");
-            int id_ = _pricingRepository.InsertPricing(pricing);
+            PricingDAO _pricingDAO  = new PricingDAO();
+            OptionRepository _optionRepository = new OptionRepository(_pricingDAO);
+            
+            Pricing pricing = _optionRepository.GetPricingById(12);
+            
+            int id_ = _optionRepository.InsertPricing(pricing);
             
             // Assert : 
 
-            Assert.AreEqual(1, id_);
+            Assert.AreEqual(19, id_);
 
             Assert.Pass();
         }

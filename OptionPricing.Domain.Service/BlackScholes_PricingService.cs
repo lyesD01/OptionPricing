@@ -11,7 +11,7 @@ namespace OptionPricing.Domain.Service
 			double r = price.option.underlying.riskFreeRate.Value;
 			double X = price.option.strike.Value;
 			double v = price.option.underlying.impliedVolatility.Value;
-			TimeSpan Tspan = price.option.maturity.Value - price.pricingDate.pricingDate;
+			TimeSpan Tspan = price.option.maturity.Value - price.pricingDate.Value;
 			double T = Tspan.TotalDays;
 			string CallPutFlag = price.option.underlying.underlyingType.ToString();
 
