@@ -11,7 +11,7 @@ public class Program
         {
             var message = responseSocket.ReceiveFrameString();  // J'attend de recevoir tes requettes.
             Console.WriteLine($"Message Received : {message}");
-            responseSocket.SendFrame("Hello Back From Server");
+            responseSocket.SendFrame("Hello Back From Servers...Test234 Commit");
             Console.ReadLine();
         }
     }
