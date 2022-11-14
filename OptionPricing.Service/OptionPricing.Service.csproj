@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OptionPricing.Domain.Service\OptionPricing.Domain.Service.csproj" />
+    <ProjectReference Include="..\OptionPricing.Domain\OptionPricing.Domain.csproj" />
+    <ProjectReference Include="..\OptionPricing.Infrastructure\OptionPricing.Infrastructure.csproj" />
+    <ProjectReference Include="..\OptionPricing.Repository\OptionPricing.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

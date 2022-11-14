@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricingDAO", "OptionPricingDAO\OptionPricingDAO.csproj", "{01261595-29F4-43FA-84C5-BBBFB0CBF56D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricingDAO.Tests", "OptionPricingDAO.Tests\OptionPricingDAO.Tests.csproj", "{AE377F1A-A126-4FF6-998D-63260DC2C2C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Domain", "OptionPricing.Domain\OptionPricing.Domain.csproj", "{8ABA91EE-3B75-4E57-AE72-7CC0D87757C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Repository", "OptionPricing.Repository\OptionPricing.Repository.csproj", "{F4C1FCCE-7064-4972-AC7F-C761469C368B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Service", "OptionPricing.Service\OptionPricing.Service.csproj", "{CC788564-B375-4A39-9835-3B5A93294614}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Domain.Service", "OptionPricing.Domain.Service\OptionPricing.Domain.Service.csproj", "{B6A1D9B3-F5AA-409B-97BC-B928F8B025B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Infrastructure", "OptionPricing.Infrastructure\OptionPricing.Infrastructure.csproj", "{E3360DC1-74BF-4488-AF15-0A1BC72ED079}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Repository.tests", "OptionPricing.Repository.tests\OptionPricing.Repository.tests.csproj", "{1DD3A2DB-FE12-4EA1-8170-14A9A3AAC8E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.NetMQService", "OptionPricing.NetMQService\OptionPricing.NetMQService.csproj", "{F73859B9-7AA9-4039-A768-82F38829955D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.NetMQClient", "OptionPricing.NetMQClient\OptionPricing.NetMQClient.csproj", "{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01261595-29F4-43FA-84C5-BBBFB0CBF56D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01261595-29F4-43FA-84C5-BBBFB0CBF56D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01261595-29F4-43FA-84C5-BBBFB0CBF56D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01261595-29F4-43FA-84C5-BBBFB0CBF56D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE377F1A-A126-4FF6-998D-63260DC2C2C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE377F1A-A126-4FF6-998D-63260DC2C2C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE377F1A-A126-4FF6-998D-63260DC2C2C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE377F1A-A126-4FF6-998D-63260DC2C2C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ABA91EE-3B75-4E57-AE72-7CC0D87757C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ABA91EE-3B75-4E57-AE72-7CC0D87757C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ABA91EE-3B75-4E57-AE72-7CC0D87757C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ABA91EE-3B75-4E57-AE72-7CC0D87757C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C1FCCE-7064-4972-AC7F-C761469C368B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C1FCCE-7064-4972-AC7F-C761469C368B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C1FCCE-7064-4972-AC7F-C761469C368B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C1FCCE-7064-4972-AC7F-C761469C368B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC788564-B375-4A39-9835-3B5A93294614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC788564-B375-4A39-9835-3B5A93294614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC788564-B375-4A39-9835-3B5A93294614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC788564-B375-4A39-9835-3B5A93294614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A1D9B3-F5AA-409B-97BC-B928F8B025B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A1D9B3-F5AA-409B-97BC-B928F8B025B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A1D9B3-F5AA-409B-97BC-B928F8B025B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A1D9B3-F5AA-409B-97BC-B928F8B025B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3360DC1-74BF-4488-AF15-0A1BC72ED079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3360DC1-74BF-4488-AF15-0A1BC72ED079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3360DC1-74BF-4488-AF15-0A1BC72ED079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3360DC1-74BF-4488-AF15-0A1BC72ED079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD3A2DB-FE12-4EA1-8170-14A9A3AAC8E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD3A2DB-FE12-4EA1-8170-14A9A3AAC8E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD3A2DB-FE12-4EA1-8170-14A9A3AAC8E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD3A2DB-FE12-4EA1-8170-14A9A3AAC8E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F73859B9-7AA9-4039-A768-82F38829955D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F73859B9-7AA9-4039-A768-82F38829955D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F73859B9-7AA9-4039-A768-82F38829955D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F73859B9-7AA9-4039-A768-82F38829955D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E7AFA47-8982-4107-A96E-534748F4AFD4}
+	EndGlobalSection
+EndGlobal
