@@ -12,7 +12,7 @@ namespace OptionPricing.Domain
 
         public PricingDate(DateTime pricingDate)
         {
-            if (pricingDate < DateTime.Today) throw new Exception("Not possible to price with previous or daily date");
+            if (pricingDate < DateTime.Today) throw new Exception("Not possible to price with previous date");
             Value = pricingDate;
         }
     }
