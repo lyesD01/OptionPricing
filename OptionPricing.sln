@@ -19,9 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Repository.tests", "OptionPricing.Repository.tests\OptionPricing.Repository.tests.csproj", "{1DD3A2DB-FE12-4EA1-8170-14A9A3AAC8E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.NetMQService", "OptionPricing.NetMQService\OptionPricing.NetMQService.csproj", "{F73859B9-7AA9-4039-A768-82F38829955D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.NetMQService", "OptionPricing.NetMQService\OptionPricing.NetMQService.csproj", "{F73859B9-7AA9-4039-A768-82F38829955D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.NetMQClient", "OptionPricing.NetMQClient\OptionPricing.NetMQClient.csproj", "{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.NetMQClient", "OptionPricing.NetMQClient\OptionPricing.NetMQClient.csproj", "{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.Transport", "OptionPricing.Transport\OptionPricing.Transport.csproj", "{1B5C4972-656D-4A3B-A1E0-6978AD1B5FF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.UI.WPF", "OptionPricing.UI.WPF\OptionPricing.UI.WPF.csproj", "{348CECEC-D771-4AB7-8129-51140CF58707}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B5C4972-656D-4A3B-A1E0-6978AD1B5FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B5C4972-656D-4A3B-A1E0-6978AD1B5FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B5C4972-656D-4A3B-A1E0-6978AD1B5FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B5C4972-656D-4A3B-A1E0-6978AD1B5FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{348CECEC-D771-4AB7-8129-51140CF58707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{348CECEC-D771-4AB7-8129-51140CF58707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{348CECEC-D771-4AB7-8129-51140CF58707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{348CECEC-D771-4AB7-8129-51140CF58707}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

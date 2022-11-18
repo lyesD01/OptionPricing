@@ -1,0 +1,11 @@
+﻿<Application x:Class="OptionPricing.UI.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OptionPricing.UI.WPF"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator" xmlns:vm ="clr-namespace:OptionPricing.UI.WPF.ViewModels"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

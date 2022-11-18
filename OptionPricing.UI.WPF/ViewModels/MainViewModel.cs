@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace OptionPricing.Domain.Service
+namespace OptionPricing.UI.WPF.ViewModels
 {
-    public interface IPrice
+    public class MainViewModel
     {
-        double Price(Pricing price);
     }
 }

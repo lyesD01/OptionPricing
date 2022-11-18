@@ -9,11 +9,11 @@ public interface IPricingRepository
     Pricing GetPricingById(int pricingId);
 }
 
-public class OptionRepository : IPricingRepository
+public class PricingRepository : IPricingRepository
 {
     private readonly IPricingDAO _optionDAO;
 
-    public OptionRepository(IPricingDAO optionDAO)
+    public PricingRepository(IPricingDAO optionDAO)
     {
         _optionDAO = optionDAO;
 
@@ -63,7 +63,7 @@ public class OptionRepository : IPricingRepository
 
         OptionType optionType = (OptionType)Enum.Parse(typeof(OptionType), pricingDTO.OptionType);
         Option option = new Option(trader, strike_, maturity, optionType, underlying);
-        Pricing pricing = new Pricing(option, model, pricingDate, premium);
+        Pricing pricing = new Pricing(option, model, pricingDate);
 
         return pricing;
     }

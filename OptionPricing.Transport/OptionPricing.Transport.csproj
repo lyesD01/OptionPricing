@@ -1,7 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -14,9 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\OptionPricing.Domain\OptionPricing.Domain.csproj" />
     <ProjectReference Include="..\OptionPricing.Infrastructure\OptionPricing.Infrastructure.csproj" />
-    <ProjectReference Include="..\OptionPricing.Repository\OptionPricing.Repository.csproj" />
-    <ProjectReference Include="..\OptionPricing.Service\OptionPricing.Service.csproj" />
-    <ProjectReference Include="..\OptionPricingDAO\OptionPricingDAO.csproj" />
   </ItemGroup>
 
 </Project>

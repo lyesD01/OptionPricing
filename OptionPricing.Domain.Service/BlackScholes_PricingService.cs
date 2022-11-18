@@ -2,7 +2,7 @@
 
 namespace OptionPricing.Domain.Service
 {
-    public class BlackScholes_PricingService : IPricingService
+    public class BlackScholes_PricingService : IPrice
     {
         public double Price(Pricing price)
         {
