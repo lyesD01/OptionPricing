@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OptionPricing.UI.WPF"
+        xmlns:domain ="clr-namespace:OptionPricing.Domain;assembly=OptionPricing.Domain"
         mc:Ignorable="d"
         Title="{Binding AppName}" Height="475" Width="853"
         
@@ -22,26 +23,89 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+
         <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">
-            Stock Price
+            First Name
         </Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding StockPrice, Mode=TwoWay}" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding FirstName, Mode=TwoWay}"/>
 
         <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">
-            Volatility
+            Family Name
         </Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding StockPrice, Mode=TwoWay}" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FamillyName, Mode=TwoWay}"/>
 
         <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">
-            Type Models
+            Desk Name
         </Label>
-        <ComboBox Grid.Row="2" ItemsSource="{Binding Source={StaticResource }}" 
-                  SelectedItem="{Binding PricingModel}" Grid.ColumnSpan="2" Margin="426,28,0,0" Grid.RowSpan="4"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding DeskName, Mode=TwoWay}"/>
 
+        <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">
+            Stock Price
+        </Label>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding StockPrice, Mode=TwoWay}"/>
 
+        <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="0">
+            Volatility
+        </Label>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Volatility, Mode=TwoWay}"/>
+
+        <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0">
+            Maturity
+        </Label>
+        <DatePicker Grid.Row="6" Grid.Column="1" SelectedDate="{Binding Maturity, Mode=TwoWay}" DisplayDate="2022/01/01" DisplayDateStart="2008/01/01" DisplayDateEnd="2022/12/31"/>
+
+        <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Grid.Column="0">
+            Model Types
+        </Label>
+        <ComboBox Grid.Row="7" Grid.Column="1" ItemsSource="{Binding Source={local:EnumBindingSrourceExtention {x:Type  domain:PricingModel}}}"
+          SelectedItem="{Binding PricingModel}" />
+
+        <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8" Grid.Column="0">
+            Strike
+        </Label>
+        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Strike, Mode=TwoWay}"/>
+
+        <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="9" Grid.Column="0">
+            Risk Free Rate
+        </Label>
+        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding RiskFreeRate, Mode=TwoWay}"/>
+
+        <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="10" Grid.Column="0">
+            Pricing Date
+        </Label>
+        <DatePicker Grid.Row="10" Grid.Column="1" SelectedDate="{Binding PricingDate, Mode=TwoWay}" DisplayDate="2022/01/01" DisplayDateStart="2008/01/01" DisplayDateEnd="2022/12/31"/>
+
+        <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="11" Grid.Column="0">
+            Underlying Types
+        </Label>
+        <ComboBox Grid.Row="11" Grid.Column="1" ItemsSource="{Binding Source={local:EnumBindingSrourceExtention {x:Type  domain:UnderlyingType}}}"
+          SelectedItem="{Binding UnderlyingType}" />
+
+        <Label FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="12" Grid.Column="0">
+            Option Type
+        </Label>
+        <ComboBox Grid.Row="12" Grid.Column="1" ItemsSource="{Binding Source={local:EnumBindingSrourceExtention {x:Type  domain:OptionType}}}"
+          SelectedItem="{Binding OptionType}" />
+
+        <Button Height = "20" Width="125" Margin = "366,55,0,0" Name = "ShowMessageBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="13" Grid.ColumnSpan="2" FontFamily="Calibri" Foreground="#FF16D125" FontWeight="Bold" FontStyle="Italic" FontSize="16">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF5F4242"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            Price !
+        </Button>
 
     </Grid>
 </Window>
