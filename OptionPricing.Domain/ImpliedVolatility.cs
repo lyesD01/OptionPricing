@@ -8,11 +8,11 @@ namespace OptionPricing.Domain
 {
     public class ImpliedVolatility
     {
-        public float Value { get; private set; }
-        public ImpliedVolatility(float volatility)
+        public float impliedVolatility{ get; private set; }
+        public ImpliedVolatility(float impliedVolatility)
         {
-            if (volatility < 0) throw new Exception("Vol Negative ");
-            Value = volatility;
+            if (impliedVolatility < 0) throw new Exception("Vol Negative ");
+            this.impliedVolatility= impliedVolatility;
 
         }
     }

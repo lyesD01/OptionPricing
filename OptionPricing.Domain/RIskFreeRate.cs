@@ -8,12 +8,12 @@ namespace OptionPricing.Domain
 {
     public class RiskFreeRate
     {
-        public float Value { get; private set; }
+        public float rate { get; private set; }
 
         public RiskFreeRate(float rate)
         {
             if (rate < 0) throw new Exception("Risk Free Rate must be positive...");
-            Value = rate;
+            this.rate = rate;
         }
     }
 }

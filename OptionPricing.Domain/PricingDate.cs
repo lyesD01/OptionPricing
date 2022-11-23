@@ -8,12 +8,12 @@ namespace OptionPricing.Domain
 {
     public class PricingDate
     {
-        public DateTime Value { get; private set; }
+        public DateTime pricingDate { get; private set; }
 
         public PricingDate(DateTime pricingDate)
         {
             if (pricingDate < DateTime.Today) throw new Exception("Not possible to price with previous date");
-            Value = pricingDate;
+            this.pricingDate = pricingDate;
         }
     }
 }

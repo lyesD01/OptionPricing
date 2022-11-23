@@ -8,12 +8,12 @@ namespace OptionPricing.Domain
 {
     public class Strike
     {
-        public double Value { get; private set; }
+        public double strike { get; private set; }
 
         public Strike(double strike)
         {
             if (strike <= 0) throw new Exception("Negative values not callable... \n");
-            Value = strike;
+            this.strike = strike;
         }
     }
 }

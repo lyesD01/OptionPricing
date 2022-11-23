@@ -7,11 +7,11 @@ namespace OptionPricing.Domain.Service
         public double Price(Pricing price)
         {
 
-			double S = price.option.underlying.initialStockPrice.Value;
-			double r = price.option.underlying.riskFreeRate.Value;
-			double X = price.option.strike.Value;
-			double v = price.option.underlying.impliedVolatility.Value;
-			TimeSpan Tspan = price.option.maturity.Value - price.pricingDate.Value;
+			double S = price.option.underlying.initialStockPrice.initialStockPrice;
+			double r = price.option.underlying.riskFreeRate.rate;
+			double X = price.option.strike.strike;
+			double v = price.option.underlying.impliedVolatility.impliedVolatility;
+			TimeSpan Tspan = price.option.maturity.maturity - price.pricingDate.pricingDate;
 			double T = Tspan.TotalDays;
 			string CallPutFlag = price.option.underlying.underlyingType.ToString();
 

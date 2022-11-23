@@ -97,7 +97,8 @@
         <ComboBox Grid.Row="12" Grid.Column="1" ItemsSource="{Binding Source={local:EnumBindingSrourceExtention {x:Type  domain:OptionType}}}"
           SelectedItem="{Binding OptionType}" />
 
-        <Button Height = "20" Width="125" Margin = "366,55,0,0" Name = "ShowMessageBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="13" Grid.ColumnSpan="2" FontFamily="Calibri" Foreground="#FF16D125" FontWeight="Bold" FontStyle="Italic" FontSize="16">
+        <Button Height = "29" Width="125" Margin = "168,29,0,0" Name = "ShowMessageBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="13" 
+                FontFamily="Calibri" Foreground="#FF16D125" FontWeight="Bold" FontStyle="Italic" FontSize="16" Command="{Binding PriceButton}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="1"/>
@@ -106,6 +107,9 @@
             </Button.Background>
             Price !
         </Button>
+
+        <TextBox Grid.Row="13" Text="{Binding Premium, Mode=TwoWay}" Margin="32,29,31,0" Grid.Column="1" Background="#FFECE8E8" FontFamily="Impact" FontSize="16"/>
+
 
     </Grid>
 </Window>
