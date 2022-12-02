@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace OptionPricing.Domain
 {
+    public interface IPricing
+    {
+
+    }
     public class Pricing
     {
         public Option option { get; set; }
@@ -24,5 +28,11 @@ namespace OptionPricing.Domain
             this.pricingDate = pricingDate;
 
         }
+
+        //public Pricing GetPricing()
+        //{
+        //    Pricing myPricing = new Pricing(option, model, pricingDate);
+        //    return myPricing;
+        //}
     }
 }
