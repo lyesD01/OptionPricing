@@ -63,7 +63,9 @@ public class PricingRepository : IPricingRepository
 
         OptionType optionType = (OptionType)Enum.Parse(typeof(OptionType), pricingDTO.OptionType);
         Option option = new Option(trader, strike_, maturity, optionType, underlying);
-        Pricing pricing = new Pricing(option, model, pricingDate);
+        NumberOfSimulations numberOfSimulations = new NumberOfSimulations(1);
+
+        Pricing pricing = new Pricing(option, model, pricingDate, numberOfSimulations);
 
         return pricing;
     }

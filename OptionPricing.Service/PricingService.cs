@@ -41,7 +41,7 @@ namespace OptionPricing.Service
 
 
             // Etape 4 : Sérialisation.
-            _optionPricingSerialiser.Serialise<Pricing>(pricing); 
+            JsonString = _optionPricingSerialiser.Serialise<Pricing>(pricing); 
 
 
 

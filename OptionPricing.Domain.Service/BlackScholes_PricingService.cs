@@ -13,8 +13,8 @@ namespace OptionPricing.Domain.Service
 			double X = price.option.strike.strike;
 			double v = price.option.underlying.impliedVolatility.impliedVolatility;
 			TimeSpan Tspan = price.option.maturity.maturity - price.pricingDate.pricingDate;
-			double T = Tspan.TotalDays;
-			string CallPutFlag = price.option.underlying.underlyingType.ToString();
+			double T = Tspan.TotalDays / 365.0; // Normalized maturity.
+			string CallPutFlag = price.option.optionType.ToString();
 
 
 			double d1 = 0.0;
@@ -41,5 +41,7 @@ namespace OptionPricing.Domain.Service
             double cdfValue = MathNet.Numerics.Distributions.Normal.CDF(0, 1, X) ;
             return cdfValue;
         }
-    }
+
+	
+	}
 }

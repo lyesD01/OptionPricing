@@ -12,6 +12,7 @@ namespace OptionPricing.Domain
         Black_Scholes,
         Heston,
         HJM,
-        Local_Volatility
+        Local_Volatility,
+        Monte_Carlo,
     }
 }

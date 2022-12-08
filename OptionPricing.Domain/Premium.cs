@@ -8,7 +8,7 @@ namespace OptionPricing.Domain
 {
     public class Premium
     {
-        public float premium;
+        public float premium { get; private set; }
 
         public Premium(float premium)
         {

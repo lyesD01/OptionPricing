@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Xml.Schema;
 
 namespace OptionPricing.UI.WPF.ViewModels
 {
@@ -111,7 +112,8 @@ namespace OptionPricing.UI.WPF.ViewModels
             get => _pricingModel;
             set => SetProperty(ref _pricingModel, value);
         }
-
+        
+        // Underlying Type :
         private UnderlyingType _underlyingType;
         public UnderlyingType UnderlyingType
         {
@@ -119,12 +121,22 @@ namespace OptionPricing.UI.WPF.ViewModels
             set => SetProperty(ref _underlyingType, value);
         }
 
+        //Option Type :
         private OptionType _optionType;
         public OptionType OptionType
         {
             get => _optionType;
             set => SetProperty(ref _optionType, value);
         } 
+
+        //Number Of Simulations : 
+        private int _numberOfSimulations = 1;
+        public int Number_OfSimulations
+        {
+            get => _numberOfSimulations;
+            set => SetProperty(ref _numberOfSimulations, value);
+        }
+
         #endregion
 
 
@@ -134,7 +146,7 @@ namespace OptionPricing.UI.WPF.ViewModels
             _myTransporter = transporter;
             PriceButton = new RelayCommand(OnClickButton);
         }
-
+         
         private void OnClickButton()
         {
             Desk desk = new Desk(DeskName);
@@ -150,14 +162,19 @@ namespace OptionPricing.UI.WPF.ViewModels
 
             UnderlyingType underlyingType = UnderlyingType;
             PricingModel model = PricingModel;
+
+
             Underlying underlying = new Underlying(initialStockPrice, implied_volatility, riskFreeRate, underlyingType);
 
             OptionType optionType = OptionType;
             Option option = new Option(trader, strike_, maturity, optionType, underlying);
-            Pricing pricing = new Pricing(option, model, pricingDate);
 
+            NumberOfSimulations numberOfSimulations = new NumberOfSimulations(Number_OfSimulations);
+ 
+            Pricing pricing = new Pricing(option, model, pricingDate, numberOfSimulations);
             pricing = _myTransporter.Connect("localhost", 5555, pricing);
             Premium = pricing.premium.premium;
+
         }
 
         private bool SetProperty<T>(ref T field, T newValue, [CallerMemberName]string propertyName = null)

@@ -16,7 +16,7 @@ registration.Register<IPricingRepository, PricingRepository>();
 
 registration.Register<IPrice, BlackScholes_PricingService>(PricingModel.Black_Scholes);
 registration.Register<IPrice, HJM_PricingService>(PricingModel.HJM);
-//registration.Register<IPrice, HJM_PricingService>(PricingModel.Local_Volatility);
+registration.Register<IPrice, BSMonteCarloService>(PricingModel.Monte_Carlo);
 //registration.Register<IPrice, HJM_PricingService>(PricingModel.Heston);
 
 registration.Register<IPricingService, PricingService>();
@@ -30,7 +30,7 @@ using(var responseSocket = new ResponseSocket("@tcp://*:5555") )
 		var message = responseSocket.ReceiveFrameString();
 		Console.WriteLine($"Message Received : {message}");
 		var response = optionService.PriceAndPersist(message, registration);
-
+		Console.WriteLine($"Response sent after calculus : {response} ");
 		responseSocket.SendFrame(response);
 	}
 }
