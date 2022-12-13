@@ -104,7 +104,7 @@
             Number of Simulations
         </Label>
 
-        <TextBox FontSize="14" Grid.Column="1" VerticalAlignment="Center" Grid.Row="13" Height="29" Margin="30,0,31,0"
+        <TextBox FontSize="14" Grid.Column="1" VerticalAlignment="Bottom" Grid.Row="13" Height="29" Margin="30,0,31,6"
                  Text="{Binding Number_OfSimulations, Mode=TwoWay}"
                  />
 

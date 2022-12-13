@@ -38,8 +38,7 @@ namespace OptionPricing.Domain.Service
 
         public double CND(double X)
         {
-            double cdfValue = MathNet.Numerics.Distributions.Normal.CDF(0, 1, X) ;
-            return cdfValue;
+            return MathNet.Numerics.Distributions.Normal.CDF(0, 1, X) ;
         }
 
 	

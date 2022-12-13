@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.NetMQService"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.NetMQClient", "OptionPricing.NetMQClient\OptionPricing.NetMQClient.csproj", "{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.Transport", "OptionPricing.Transport\OptionPricing.Transport.csproj", "{1B5C4972-656D-4A3B-A1E0-6978AD1B5FF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Transport", "OptionPricing.Transport\OptionPricing.Transport.csproj", "{1B5C4972-656D-4A3B-A1E0-6978AD1B5FF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.UI.WPF", "OptionPricing.UI.WPF\OptionPricing.UI.WPF.csproj", "{348CECEC-D771-4AB7-8129-51140CF58707}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.UI.WPF", "OptionPricing.UI.WPF\OptionPricing.UI.WPF.csproj", "{348CECEC-D771-4AB7-8129-51140CF58707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.Domain.Service.Tests", "OptionPricing.Domain.Service.Tests\OptionPricing.Domain.Service.Tests.csproj", "{CEFF5B7A-83CC-4EBA-BDCA-D8F2E0A83A79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{348CECEC-D771-4AB7-8129-51140CF58707}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{348CECEC-D771-4AB7-8129-51140CF58707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{348CECEC-D771-4AB7-8129-51140CF58707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFF5B7A-83CC-4EBA-BDCA-D8F2E0A83A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFF5B7A-83CC-4EBA-BDCA-D8F2E0A83A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFF5B7A-83CC-4EBA-BDCA-D8F2E0A83A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEFF5B7A-83CC-4EBA-BDCA-D8F2E0A83A79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
