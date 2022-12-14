@@ -24,41 +24,38 @@ namespace OptionPricing.Domain.Service
             double riskFreeRate  = pricingObj.option.underlying.riskFreeRate.rate;
             double strike        = pricingObj.option.strike.strike;
             TimeSpan maturity    = pricingObj.option.maturity.maturity - pricingObj.pricingDate.pricingDate;
-            double normalizedMaturity = maturity.TotalDays / 365.0;
+            double normalizedMaturity = (maturity.TotalDays+1) / 365.0;
             int numberOfSimualtions = pricingObj.numberOfSimulations.numberOfSimulations;
             string CallPutFlag = pricingObj.option.optionType.ToString().ToUpper();
 
             double logStockPrice = Math.Log(stockPrice);
-            double nudt          = (riskFreeRate - 0.5 * Math.Pow(volatility, 2) );
+            double nudt          = (riskFreeRate - 0.5 * Math.Pow(volatility, 2) ) * normalizedMaturity;
             double volStdt       = volatility * Math.Sqrt(normalizedMaturity);
-            double PayOff;
             double expStockPrice;
-            double sumPayoff = 0.0;
-
-            double[] normalDistribution = new double[numberOfSimualtions];
-            MathNet.Numerics.Distributions.Normal.Samples(normalDistribution, 0, 1);
-
-
+            double sumPayOff = 0.0;
+            double NextLogStockPrice;
+            double payOff;
 
             for (int i=0; i<numberOfSimualtions; i++)
             {
-                logStockPrice = logStockPrice + nudt + volStdt * normalDistribution[i];
-                expStockPrice = Math.Exp(logStockPrice);
-                if (CallPutFlag == "CALL") PayOff = Math.Max(0, expStockPrice - strike);
+                NextLogStockPrice = logStockPrice + nudt + volStdt * MathNet.Numerics.Distributions.Normal.Sample(0, 1);
+                expStockPrice = Math.Exp(NextLogStockPrice);
+                if (CallPutFlag == "CALL") payOff = Math.Max(0, expStockPrice - strike);
                 else
                 {
-                    if (CallPutFlag == "PUT") PayOff = Math.Min(0, strike - expStockPrice);
-                    else throw new Exception("The option type referenced for this type of options does not exist...");
+                    if (CallPutFlag == "PUT") payOff = Math.Max(0, strike - expStockPrice);
+                    else throw new Exception("Pricing impossible for this option with this model....");
                 }
-                sumPayoff = sumPayoff + PayOff;
+                sumPayOff = sumPayOff + payOff;
             }
 
             // Expectation computation : 
-            double ExpectedCallPrice = Math.Exp(-riskFreeRate * normalizedMaturity) * sumPayoff / numberOfSimualtions;
+            double ExpectedCallPrice = Math.Exp(-riskFreeRate * normalizedMaturity) * sumPayOff / numberOfSimualtions;
 
 
             return ExpectedCallPrice;
         }
+
 
 
 
