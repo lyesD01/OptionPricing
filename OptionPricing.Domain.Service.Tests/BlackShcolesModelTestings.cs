@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace OptionPricing.Domain.Service.Tests
 {
     public class Tests
@@ -11,15 +13,32 @@ namespace OptionPricing.Domain.Service.Tests
         public void BlackScholes_ClosedFormula_Tests()
         {
             // Arrange  : 
+            var timer = new Stopwatch();
+
             Pricing pricing = CreatePricing();
             BSMonteCarloService blackScholes = new BSMonteCarloService();
+            BlackScholes_PricingService blackScholes_PricingService = new BlackScholes_PricingService();
             
-
             // ACT      : 
-            double premium = blackScholes.Price(pricing);
+            timer.Start();
+            double MCpremium = blackScholes.Price(pricing);
+            timer.Stop();
+            Console.WriteLine($"The SIMULATED PRICE with Monte Carlo    : ************ {MCpremium} ");
+            Console.WriteLine($"Execution Time                          : ************ {timer.ElapsedMilliseconds} ");
+            
+            timer.Restart();
+            double ClosedPremium = blackScholes_PricingService.Price(pricing);
+            timer.Stop();
+            Console.WriteLine($"The SIMULATED PRICE with Closed Formula : ************ {ClosedPremium} ");
+            Console.WriteLine($"Execution Time                          : ************ {timer.ElapsedMilliseconds} ");
 
+            timer.Restart();
+            double MCPremimuWithoutThread = blackScholes.European_MonteCarlor_Simulations_withoutMT(pricing);
+            timer.Stop();
+            Console.WriteLine($"The SIMULATED PRICE without MultiThread : ************ {MCPremimuWithoutThread} ");
+            Console.WriteLine($"Execution Time                          : ************ {timer.ElapsedMilliseconds} ");
             // Assert   : 
-            Console.WriteLine($"The SIMULATED PRICE ************ {premium} ");
+
 
             Assert.Pass();
         }
@@ -45,7 +64,7 @@ namespace OptionPricing.Domain.Service.Tests
             PricingModel model = PricingModel.Monte_Carlo;
             Underlying underlying = new Underlying(initialStockPrice, implied_volatility, riskFreeRate, underlyingType);
             OptionType optionType = OptionType.Call;
-            NumberOfSimulations numberOfSimulations = new NumberOfSimulations(15000);
+            NumberOfSimulations numberOfSimulations = new NumberOfSimulations(150000);
 
             Option option = new Option(trader, strike, maturity, optionType, underlying);
             Pricing pricing = new Pricing(option, model, pricingDate,numberOfSimulations);
