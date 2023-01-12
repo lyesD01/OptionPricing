@@ -10,16 +10,11 @@ namespace Calibration.Repository
     public class CalibrationRepository : ICalibrationRepository
     {
 
-        private readonly IntrestRatesData _intrestRates;
-
         public IntrestRatesData getIntrestRatesData()
         {
-            HistoricalDataForCalibration historicalDataForCalibration = HistoricalDataForCalibration.;
-
-            
-            
+            HistoricalDataForCalibration historicalDataForCalibration = new HistoricalDataForCalibration();
+            return historicalDataForCalibration.GetIntrestRateData().Result;
         }
 
-        public 
     }
 }

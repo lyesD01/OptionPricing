@@ -9,7 +9,7 @@ namespace CalibrationDAO
 {
     public class HistoricalDataForCalibration : IRates
     {
-        
+        public IntrestRatesData historicalRatesData;
         public async Task<IntrestRatesData> GetIntrestRateData()
         {
 
@@ -27,7 +27,8 @@ namespace CalibrationDAO
                 historicalData.HistoricalData.Add(historicalIntrestRate.Close);
             }
 
-            return historicalData;
+            historicalRatesData = historicalData;
+            return historicalRatesData;
         }
     }
 }
