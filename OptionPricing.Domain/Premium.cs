@@ -8,11 +8,11 @@ namespace OptionPricing.Domain
 {
     public class Premium
     {
-        public float Value;
+        public float premium { get; private set; }
 
         public Premium(float premium)
         {
-            Value = premium;
+            this.premium = premium;
         }
     }
 }

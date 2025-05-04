@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace OptionPricing.Domain.Service
 {
-    public class HJM_PricingService : IPricingService
+    public class HJM_PricingService : IPrice
     {
         public double Price(Pricing price)
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

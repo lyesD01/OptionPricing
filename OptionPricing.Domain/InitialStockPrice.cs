@@ -8,12 +8,12 @@ namespace OptionPricing.Domain
 {
     public class InitialStockPrice
     {
-        public float Value { get; private set; }   
+        public float initialStockPrice { get; private set; }   
 
-        public InitialStockPrice(float price)
+        public InitialStockPrice(float initialStockPrice)
         {
-            if (price < 0) throw new Exception("Initial Price is negative, only positive values handled...");
-            Value = price;
+            if (initialStockPrice < 0) throw new Exception("Initial Price is negative, only positive values handled...");
+            this.initialStockPrice = initialStockPrice;
         }
     }
 }

@@ -19,6 +19,7 @@ namespace OptionPricing.Domain.Service
 
         public double European_MonteCarlor_Simulations(Pricing pricingObj)
         {
+
             double stockPrice    = pricingObj.option.underlying.initialStockPrice.Value;
             double volatility    = pricingObj.option.underlying.impliedVolatility.Value;
             double riskFreeRate  = pricingObj.option.underlying.riskFreeRate.Value;
@@ -27,6 +28,7 @@ namespace OptionPricing.Domain.Service
             double normalizedMaturity = (maturity.TotalDays+1) / 365.0;
             //int numberOfSimualtions = pricingObj.numberOfSimulations.numberOfSimulations;
             int numberOfSimualtions = 100000;
+
             string CallPutFlag = pricingObj.option.optionType.ToString().ToUpper();
 
             double logStockPrice = Math.Log(stockPrice);
@@ -46,7 +48,7 @@ namespace OptionPricing.Domain.Service
                 int IndexCore = core;
                  MCSimulationsTasks[IndexCore] = Task.Factory.StartNew(() =>
                 {
-                    
+
                     for (int i=0; i<numberOfSimualtions; i++)
                     {
                         NextLogStockPrice = logStockPrice + nudt + volStdt * MathNet.Numerics.Distributions.Normal.Sample(0, 1);
@@ -71,7 +73,6 @@ namespace OptionPricing.Domain.Service
             // Expectation computation : 
             double ExpectedCallPrice = Math.Exp(-riskFreeRate * normalizedMaturity) * finalPayoff / (numberOfSimualtions * numberOfCores);
 
-
             return ExpectedCallPrice;
         }
 
@@ -80,6 +81,7 @@ namespace OptionPricing.Domain.Service
 
         public double European_MonteCarlor_Simulations_withoutMT(Pricing pricingObj)
         {
+
             int numberOfSimualtions = 100000; //// Warning 
             double stockPrice = pricingObj.option.underlying.initialStockPrice.Value;
             double volatility = pricingObj.option.underlying.impliedVolatility.Value;
@@ -88,6 +90,7 @@ namespace OptionPricing.Domain.Service
             TimeSpan maturity = pricingObj.option.maturity.Value - pricingObj.pricingDate.Value;
             double normalizedMaturity = (maturity.TotalDays + 1) / 365.0;
             numberOfSimualtions = numberOfSimualtions * numberOfCores; //// Check it again here ********
+
             string CallPutFlag = pricingObj.option.optionType.ToString().ToUpper();
 
             double logStockPrice = Math.Log(stockPrice);
@@ -128,6 +131,8 @@ namespace OptionPricing.Domain.Service
             double strike               = pricingObj.option.strike.Value;
             double volatility           = pricingObj.option.underlying.impliedVolatility.Value;
             double riskFreeRate         = pricingObj.option.underlying.riskFreeRate.Value;
+
+
 
             double dt                   = normalizedMaturity / timeSpan.TotalDays;
             double NuDt                 = (riskFreeRate - 0.5 * Math.Pow(volatility, 2) ) * dt;

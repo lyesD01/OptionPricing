@@ -13,6 +13,7 @@ namespace OptionPricing.Domain.Service
 			double X = price.option.strike.Value;
 			double v = price.option.underlying.impliedVolatility.Value;
 			TimeSpan Tspan = price.option.maturity.Value - price.pricingDate.Value;
+
 			double T = Tspan.TotalDays / 365.0; // Normalized maturity.
 			string CallPutFlag = price.option.optionType.ToString();
 

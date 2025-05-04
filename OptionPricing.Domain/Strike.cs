@@ -13,7 +13,7 @@ namespace OptionPricing.Domain
         public Strike(float strike)
         {
             if (strike <= 0) throw new Exception("Negative values not callable... \n");
-            Value = strike;
+            this.Vavlue = strike;
         }
     }
 }

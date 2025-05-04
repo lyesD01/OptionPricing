@@ -3,10 +3,17 @@ using OptionPricing.Domain.Service;
 using OptionPricing.Infrastructure;
 using OptionPricing.Repository;
 using OptionPricingDAO;
+using System.Security;
 
 namespace OptionPricing.Service
 {
-    public class PricingService
+
+    public interface IPricingService
+    {
+        string PriceAndPersist(string JsonString, OptionPricingRegistration optionPricingRegistration);
+    }
+
+    public class PricingService : IPricingService
     {
         private readonly IPricingRepository _pricingRepository;
         private readonly IOptionPricingSerialiser _optionPricingSerialiser;
@@ -17,35 +24,30 @@ namespace OptionPricing.Service
         }
 
         //Method : 
-        public string PriceAndPersist(string myString)  // Inserer conteneur d'instance en second paramètre...
+        public string PriceAndPersist(string JsonString, OptionPricingRegistration optionPricingRegistration)  // Inserer conteneur d'instance en second paramètre...
         {
-            // Etape 1 : Déserialisation. 
-            // Create string Json :
+            // Etape 1 : Déserialisation
+            Pricing pricing = _optionPricingSerialiser.Deserialise<Pricing>(JsonString);
 
-            //string myPricing = @"{""DeskName"" : ""Delta One"", ""FirstName"" : ""Yann"", ""SecondName"" : ""Bloum"", ""StockPrice"" : ""250"",
-                               //""RiskFreeRate"" : ""0.02"", ""ImpliedVolatility"" : ""0.4"", ""Maturity"" : ""2025/09/15"", ""Strike"" : ""200"",
-                               //""DatePricing"" : ""2022/11/10"", ""Premium"" : ""0.66"", ""ModelType"" : ""HJM"", ""OptionType"" : ""Call"", 
-                               //""UnderlyingType"" : ""Commodity"" }";
-
-
-            Pricing pricing = _optionPricingSerialiser.Deserialise<Pricing>(myString);
-            
-            
             // Etape 2 : Pricing.
-            
+            var pricer = optionPricingRegistration.Resolve<IPrice>(pricing.model);
+            var price = pricer.Price(pricing);
+
+            pricing.premium = new Premium((float)price);
+
 
             // Etape 3 : Insert in DB.
             var id_ = _pricingRepository.InsertPricing(pricing);
 
 
             // Etape 4 : Sérialisation.
-            _optionPricingSerialiser.Serialise(pricing); 
+            JsonString = _optionPricingSerialiser.Serialise<Pricing>(pricing); 
 
 
 
             // Implémenter des méthodes de pricing.
 
-            return "";
+            return JsonString;
         }
     }
 }

@@ -4,6 +4,7 @@ using NetMQ.Sockets;
 using OptionPricing.Domain;
 using OptionPricing.Infrastructure;
 using System.ServiceModel;
+using System.Xml.Schema;
 
 Console.WriteLine("Hello, World!");
 
@@ -29,7 +30,8 @@ using(var requestSocket = new RequestSocket(">tcp://localhost:5555"))
 
     OptionType optionType = OptionType.Call;
     Option option = new Option(trader, strike_, maturity, optionType, underlying);
-    Pricing pricing = new Pricing(option, model, pricingDate, premium);
+    NumberOfSimulations numberOfSimulations = new NumberOfSimulations(1);
+    Pricing pricing = new Pricing(option, model, pricingDate, numberOfSimulations);
 
     var request = Serialiser.Serialise(pricing);
 

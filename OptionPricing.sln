@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
@@ -19,9 +19,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Repository.tests", "OptionPricing.Repository.tests\OptionPricing.Repository.tests.csproj", "{1DD3A2DB-FE12-4EA1-8170-14A9A3AAC8E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.NetMQService", "OptionPricing.NetMQService\OptionPricing.NetMQService.csproj", "{F73859B9-7AA9-4039-A768-82F38829955D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.NetMQService", "OptionPricing.NetMQService\OptionPricing.NetMQService.csproj", "{F73859B9-7AA9-4039-A768-82F38829955D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionPricing.NetMQClient", "OptionPricing.NetMQClient\OptionPricing.NetMQClient.csproj", "{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.NetMQClient", "OptionPricing.NetMQClient\OptionPricing.NetMQClient.csproj", "{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Transport", "OptionPricing.Transport\OptionPricing.Transport.csproj", "{1B5C4972-656D-4A3B-A1E0-6978AD1B5FF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.UI.WPF", "OptionPricing.UI.WPF\OptionPricing.UI.WPF.csproj", "{348CECEC-D771-4AB7-8129-51140CF58707}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionPricing.Domain.Service.Tests", "OptionPricing.Domain.Service.Tests\OptionPricing.Domain.Service.Tests.csproj", "{CEFF5B7A-83CC-4EBA-BDCA-D8F2E0A83A79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalibrationDAO", "CalibrationDAO\CalibrationDAO.csproj", "{5E017189-C013-4A5B-898A-AEE73F745718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calibration.Repository", "Calibration.Repository\Calibration.Repository.csproj", "{36B5DACC-1075-43F7-866E-8FD4BC3208FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRPC.OptionPricer", "gRPC_OptionPricer\GRPC.OptionPricer.csproj", "{D7731A1E-8741-4B97-B10D-804FDED3AB53}"
 EndProject
@@ -81,10 +91,13 @@ Global
 		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66AB98C1-EE4F-46ED-9DC6-2895C8D93D04}.Release|Any CPU.Build.0 = Release|Any CPU
+
 		{D7731A1E-8741-4B97-B10D-804FDED3AB53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7731A1E-8741-4B97-B10D-804FDED3AB53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7731A1E-8741-4B97-B10D-804FDED3AB53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7731A1E-8741-4B97-B10D-804FDED3AB53}.Release|Any CPU.Build.0 = Release|Any CPU
+
+
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
