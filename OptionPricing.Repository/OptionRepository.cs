@@ -22,16 +22,17 @@ public class PricingRepository : IPricingRepository
     public int InsertPricing(Pricing pricing)
     {
         var pricingDTO = new PricingDTO();
-        pricingDTO.DeskName = pricing.option.trader.deskName.deskName;
+        pricingDTO.DeskName = pricing.option.trader.deskName.value;
         pricingDTO.FirstName = pricing.option.trader.firstName;
-        pricingDTO.SecondName = pricing.option.trader.familyName;
-        pricingDTO.DatePricing = pricing.pricingDate.pricingDate;
-        pricingDTO.StockPrice = pricing.option.underlying.initialStockPrice.initialStockPrice;
-        pricingDTO.RiskFreeRate = pricing.option.underlying.riskFreeRate.rate;
-        pricingDTO.ImpliedVolatility = pricing.option.underlying.impliedVolatility.impliedVolatility;
-        pricingDTO.Strike = pricing.option.strike.strike;
-        pricingDTO.Maturity = pricing.option.maturity.maturity;
-        pricingDTO.Premium = pricing.premium.premium;
+
+        pricingDTO.SecondName = pricing.option.trader.SecondName;
+        pricingDTO.DatePricing = pricing.pricingDate.Value;
+        pricingDTO.StockPrice = pricing.option.underlying.initialStockPrice.Value;
+        pricingDTO.RiskFreeRate = pricing.option.underlying.riskFreeRate.Value;
+        pricingDTO.ImpliedVolatility = pricing.option.underlying.impliedVolatility.Value;
+        pricingDTO.Strike = pricing.option.strike.Value;
+        pricingDTO.Maturity = pricing.option.maturity.Value;
+        pricingDTO.Premium = pricing.premium.Value;
         pricingDTO.ModelType = pricing.model.ToString();
         pricingDTO.OptionType = pricing.option.optionType.ToString();
         pricingDTO.UnderlyingType = pricing.option.underlying.underlyingType.ToString();

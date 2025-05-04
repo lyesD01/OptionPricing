@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "GRPC.OptionPricer.Protos";
+package rpcRepository; 
+
+message PricingParameters{
+	int32 id = 1;
+	string deskName = 2;
+	string firstName = 3; 
+	string secondName = 4; 
+	float stockPrice = 5; 
+	float riskFreeRate = 6; 
+	float impliedVolatility = 7;
+	string maturityDate =8; 
+	//google.protobuf.timestamp maturityDate = 7; 
+	float strike = 9; 
+	//google.protobuf.timestamp pricingDate = 10;
+	string pricingDate = 10;
+	float premium = 11;
+	string modelType = 12; 
+	string optionType = 13;
+	string underlyingType = 14;
+}
+
+//message GetPricingParamResponse{ PricingParameters pricingParameters = 1;} : NEED TO BE TESTED SOMEHOW !
+//Trade Insertion request and response : 
+message InsertPricingParametersRequest{
+	string deskName = 2;
+	string firstName = 3; 
+	string secondName = 4; 
+	float stockPrice = 5; 
+	float riskFreeRate = 6; 
+	float impliedVolatility = 7;
+	string maturityDate =8; 
+	//google.protobuf.timestamp maturityDate = 7; 
+	float strike = 9; 
+	//google.protobuf.timestamp pricingDate = 10;
+	string pricingDate = 10;
+	float premium = 11;
+	string modelType = 12; 
+	string optionType = 13;
+	string underlyingType = 14;
+}
+message InsertPricingParametersResponse{int32 id = 1;}
+
+
+//message UpdatePricingParametersResponse{ repeated PricingParameters pricingParameters = 1;}
+message UpdatePricingParametersRequest{int32 id = 1;}
+message GetPricingParamRequest{ int32 id = 1; }
+
+//Ajouter eventuellement de DELETE ou D'Insert...
+
+
+service rpcRepositoryCalls{
+	rpc InsertPricingParameters(InsertPricingParametersRequest) returns (InsertPricingParametersResponse);
+	rpc GetPricingParameters(GetPricingParamRequest) returns (PricingParameters); 
+	rpc UpdatePricingParameters(UpdatePricingParametersRequest) returns (PricingParameters);
+}

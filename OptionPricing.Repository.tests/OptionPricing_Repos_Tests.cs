@@ -19,6 +19,9 @@ namespace OptionPricing.Repository.tests
         public void OptionPricing_Repos_Tests()
         {
 
+
+            Assert.That(id_, Is.EqualTo(19));
+
             var optionRepository = new PricingRepository(_pricingDAO);
 
             int id_ = optionRepository.InsertPricing((Pricing)_pricing); 

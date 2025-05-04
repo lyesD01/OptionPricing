@@ -1,3 +1,10 @@
+
+﻿//using NetMQ;
+//using NetMQ.Sockets;
+
+//public class Program
+//{
+=======
 ﻿using NetMQ;
 using NetMQ.Sockets;
 using OptionPricing.Domain;
@@ -6,6 +13,7 @@ using OptionPricing.Infrastructure;
 using OptionPricing.Repository;
 using OptionPricing.Service;
 using OptionPricingDAO;
+
 
 
 var registration = new OptionPricingRegistration();
@@ -19,18 +27,15 @@ registration.Register<IPrice, HJM_PricingService>(PricingModel.HJM);
 registration.Register<IPrice, BSMonteCarloService>(PricingModel.Monte_Carlo);
 //registration.Register<IPrice, HJM_PricingService>(PricingModel.Heston);
 
-registration.Register<IPricingService, PricingService>();
+//    private static void Main(string[] args)
+//    {
+//        using(var responseSocket = new ResponseSocket("@tcp://*:5555") )
+//        {
+//            var message = responseSocket.ReceiveFrameString();  // J'attend de recevoir tes requettes.
+//            Console.WriteLine($"Message Received : {message}");
+//            responseSocket.SendFrame("Hello Back From Servers...Test234 Commit");
+//            Console.ReadLine();
+//        }
+//    }
+//}
 
-var optionService = registration.Resolve<IPricingService>();
-
-using(var responseSocket = new ResponseSocket("@tcp://*:5555") )
-{
-	while (true) 
-	{
-		var message = responseSocket.ReceiveFrameString();
-		Console.WriteLine($"Message Received : {message}");
-		var response = optionService.PriceAndPersist(message, registration);
-		Console.WriteLine($"Response sent after calculus : {response} ");
-		responseSocket.SendFrame(response);
-	}
-}
