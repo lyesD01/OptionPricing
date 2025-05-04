@@ -14,10 +14,9 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.30.2" />
-    <PackageReference Include="Google.Protobuf.Tools" Version="3.30.2" />
-    <PackageReference Include="Grpc.AspNetCore" Version="2.70.0" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.70.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.70.0">
+    <PackageReference Include="Grpc.AspNetCore" Version="2.71.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.71.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -26,9 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\OptionPricing.Domain.Service\OptionPricing.Domain.Service.csproj" />
     <ProjectReference Include="..\OptionPricing.Domain\OptionPricing.Domain.csproj" />
-    <ProjectReference Include="..\OptionPricing.Infrastructure\OptionPricing.Infrastructure.csproj" />
     <ProjectReference Include="..\OptionPricing.Repository\OptionPricing.Repository.csproj" />
-    <ProjectReference Include="..\OptionPricing.Service\OptionPricing.Service.csproj" />
     <ProjectReference Include="..\OptionPricingDAO\OptionPricingDAO.csproj" />
   </ItemGroup>
 
