@@ -8,11 +8,11 @@ namespace OptionPricing.Domain
 {
     public class Desk
     {
-        public string deskName {get; private set;}
+        public string value {get; private set;}
         
         public Desk(string deskName)
         {
-            this.deskName = deskName;
+            this.value = deskName;
         }
     }
 }

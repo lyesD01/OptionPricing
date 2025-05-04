@@ -22,9 +22,9 @@ public class OptionRepository : IPricingRepository
     public int InsertPricing(Pricing pricing)
     {
         var pricingDTO = new PricingDTO();
-        pricingDTO.DeskName = pricing.option.trader.deskName.deskName;
+        pricingDTO.DeskName = pricing.option.trader.deskName.value;
         pricingDTO.FirstName = pricing.option.trader.firstName;
-        pricingDTO.SecondName = pricing.option.trader.familyName;
+        pricingDTO.SecondName = pricing.option.trader.SecondName;
         pricingDTO.DatePricing = pricing.pricingDate.Value;
         pricingDTO.StockPrice = pricing.option.underlying.initialStockPrice.Value;
         pricingDTO.RiskFreeRate = pricing.option.underlying.riskFreeRate.Value;

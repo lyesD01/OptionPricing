@@ -6,7 +6,7 @@
 
         public Maturity(DateTime maturity)
         {
-            if (maturity <= DateTime.Today) throw new Exception("Maturity should be later... \n");
+            if (maturity < DateTime.Today) throw new Exception("Maturity should be later... \n");
 
             Value = maturity;
         }

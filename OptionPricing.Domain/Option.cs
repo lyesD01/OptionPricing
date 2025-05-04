@@ -17,7 +17,7 @@ namespace OptionPricing.Domain
         public Option(Trader trader, Strike strike, Maturity maturity, OptionType optionType, Underlying underlying)
         {
             if (trader.firstName == null) throw new Exception("Null first name) value is non callable...");
-            if (trader.familyName == null)  throw new Exception("Null family name value is non callable...");
+            if (trader.SecondName == null)  throw new Exception("Null family name value is non callable...");
             if (trader.deskName == null)  throw new Exception("Null desk name value is non callable...");
             if (strike == null) throw new Exception("Null value for the strike is non callable...");
             if (maturity == null) throw new Exception("Null value to maturity was given, please get a positive value...");

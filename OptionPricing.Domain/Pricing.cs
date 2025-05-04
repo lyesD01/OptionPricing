@@ -8,6 +8,7 @@ namespace OptionPricing.Domain
 {
     public class Pricing
     {
+
         public Option option { get; private set; }
         public PricingModel model { get; private set; }
         public PricingDate pricingDate { get; private set; }

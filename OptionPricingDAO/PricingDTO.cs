@@ -16,7 +16,7 @@ namespace OptionPricingDAO
         public float RiskFreeRate { get; set; }
         public float ImpliedVolatility { get; set; }
         public DateTime Maturity { get; set; }
-        public double Strike { get; set; }
+        public float Strike { get; set; }
         public DateTime DatePricing { get; set; }
         public float Premium { get; set; }
         public string ModelType { get; set; }

@@ -25,7 +25,7 @@ namespace OptionPricing.Repository.tests
             
             // Assert : 
 
-            Assert.AreEqual(19, id_);
+            Assert.That(id_, Is.EqualTo(19));
 
             Assert.Pass();
         }
